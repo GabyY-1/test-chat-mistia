@@ -94,14 +94,23 @@ function App() {
           </div>
 
           <div className="messages" aria-live="polite">
-            {messages.map((item) => (
-              <div className="message-row user-row" key={item.id}>
-                <article className="message user-message">
-                  <strong>Utilisateur</strong>
-                  <p>{item.content}</p>
-                </article>
-              </div>
-            ))}
+            {messages.map((item) => {
+              const isUser = item.role === "user";
+
+              return (
+                <div
+                  className={`message-row ${isUser ? "user-row" : "assistant-row"}`}
+                  key={item.id}
+                >
+                  <article
+                    className={`message ${isUser ? "user-message" : "assistant-message"}`}
+                  >
+                    <strong>{isUser ? "Utilisateur" : "Mistia"}</strong>
+                    <p>{item.content}</p>
+                  </article>
+                </div>
+              );
+            })}
           </div>
 
           <form className="composer" onSubmit={sendMessage}>
