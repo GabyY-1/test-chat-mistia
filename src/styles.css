@@ -122,6 +122,16 @@ h2 {
   background: #111111;
 }
 
+.assistant-row {
+  justify-content: flex-start;
+}
+
+.assistant-message {
+  color: #111111;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+}
+
 .composer {
   display: flex;
   align-items: flex-end;
