@@ -24,7 +24,7 @@ button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px
 .brand-wrap { gap: 10px; }
 .brand-mark { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 9px; color: #fff; background: #19191e; }
 .brand { margin: 0; font: 700 21px/1 "Space Grotesk", sans-serif; letter-spacing: -1px; }
-.brand span { color: #8756c7; }
+.brand span { color: inherit; }
 .environment-tag { padding: 4px 6px; border-radius: 5px; color: #77717f; background: #f1eff4; font-size: 9px; font-weight: 700; letter-spacing: .8px; }
 .topbar-actions { gap: 13px; }
 .model-status { gap: 8px; color: #777780; font-size: 12px; }
