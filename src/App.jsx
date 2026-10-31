@@ -90,7 +90,6 @@ function App() {
       <header className="topbar">
         <div className="brand-wrap">
           <div className="brand-mark"><Sparkles size={17} /></div>
-          <h1 className="brand">Mist<span>IA</span></h1>
           <span className="environment-tag">LAB</span>
         </div>
         <div className="topbar-actions">
