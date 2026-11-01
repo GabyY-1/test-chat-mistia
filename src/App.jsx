@@ -26,14 +26,6 @@ import {
 } from "lucide-react";
 import { ThinkingOrb } from "thinking-orbs";
 import { BorderBeam } from "border-beam";
-import {
-  MetalText,
-  setCursorLightConfig,
-  useMetalTextReflection
-} from "metal-fx";
-
-setCursorLightConfig({ cursor: false });
-
 function Metric({ icon: Icon, label, value, detail }) {
   return (
     <div className="metric-card">
@@ -56,8 +48,6 @@ function App() {
   const [topP, setTopP] = useState("1");
   const [maxTokens, setMaxTokens] = useState("1024");
   const [copied, setCopied] = useState(false);
-  const reflectionRef = useRef(null);
-  useMetalTextReflection(reflectionRef);
 
   function sendMessage(event) {
     event.preventDefault();
@@ -145,7 +135,7 @@ function App() {
                   <div className={`message-row ${isUser ? "user-row" : "assistant-row"}`} key={item.id}>
                     {!isUser && <div className="avatar assistant-avatar"><Sparkles size={15} /></div>}
                     <article className={`message ${isUser ? "user-message" : "assistant-message"}`}>
-                      {!isUser && <div className="message-author"><span ref={reflectionRef}>Mistia</span><span className="message-model">Assistant</span></div>}
+                      {!isUser && <div className="message-author"><span>Mistia</span><span className="message-model">Assistant</span></div>}
                       <p>{item.content}</p>
                       <div className="message-meta">{item.time.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" })}</div>
                     </article>
@@ -241,7 +231,7 @@ function App() {
               <div className="section-heading"><h3>Effets actifs</h3><Zap size={15} /></div>
               <div className="effect-row"><span className="effect-preview"><ThinkingOrb state="composing" size={24} /></span><div><strong>ThinkingOrb</strong><small>Indicateur de réflexion</small></div><span className="effect-check"><Check size={13} /></span></div>
               <div className="effect-row"><span className="effect-preview beam-preview"><span /></span><div><strong>BorderBeam</strong><small>Contour animé pendant la génération</small></div><span className="effect-check"><Check size={13} /></span></div>
-              <div className="effect-row"><span className="effect-preview metal-preview"><MetalText font="600 15px Inter, sans-serif" color="#777777" strength={0.9} reflectionTargets={[{ ref: reflectionRef, strength: 0.64 }]}>M</MetalText></span><div><strong>Metal FX</strong><small>Reflet sur le nom de Mistia</small></div><span className="effect-check"><Check size={13} /></span></div>
+              <div className="effect-row"><span className="effect-preview metal-preview"><span className="metal-letter">M</span></span><div><strong>Metal FX</strong><small>Reflet sur le nom de Mistia</small></div><span className="effect-check"><Check size={13} /></span></div>
             </section>
             <div className="side-footer"><span> MISTIA LAB</span><span>Interface de développement</span></div>
           </aside>
